@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Panzerman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="top-bar">
+                <button id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()">
+                    <svg id="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="scoreboard">
+                <div class="player player-emirhan">
+                    <span class="name">Emirhan</span>
+                    <span class="score" id="score-emirhan">0</span>
+                </div>
+                <div class="player player-emir">
+                    <span class="name">Emir</span>
+                    <span class="score" id="score-emir">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="start-screen" class="screen active">
+                <div class="title-container">
+                    <h1>Özledim...<br></h1>
+                    <p>Deveye sormuşlar neden boynun eğri? <br>Deve demiş neremdüski</p>
+                </div>
+                <button id="start-btn" class="primary-btn">Oyuna Başla</button>
+            </div>
+
+            <div id="countdown-screen" class="screen">
+                <div id="countdown-number">3</div>
+            </div>
+
+            <div id="game-screen" class="screen">
+                <div class="teams-container">
+                    <div class="team-card">
+                        <img id="team1-logo" src="" alt="Logo" class="team-logo">
+                        <h2 id="team1-name">Takım 1</h2>
+                    </div>
+                    <div class="versus-badge">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="team-card">
+                        <img id="team2-logo" src="" alt="Logo" class="team-logo">
+                        <h2 id="team2-name">Takım 2</h2>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <p class="instruction">Kim bildi?</p>
+                    <div class="winner-buttons">
+                        <button class="win-btn btn-emirhan" onclick="awardPoint('emirhan')">Emirhan</button>
+                        <button class="win-btn btn-emir" onclick="awardPoint('emir')">Emir</button>
+                    </div>
+                    <button id="cancel-btn" class="secondary-btn" onclick="cancelRound()">Turu İptal Et</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
